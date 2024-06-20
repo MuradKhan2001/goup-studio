@@ -1,0 +1,385 @@
+
+.zones-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #0e224c;
+  position: relative;
+  overflow: hidden;
+
+  .left {
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+  }
+
+  .right {
+    width: calc(100% - 300px);
+    height: 100%;
+    z-index: 100;
+
+    .header-side {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      padding-left: 80px;
+      padding-right: 30px;
+
+      .follow-us {
+        color: white;
+        display: flex;
+        align-items: center;
+
+        .line {
+          margin-left: 10px;
+          margin-right: 10px;
+          width: 30px;
+          height: 2px;
+          background-color: white;
+        }
+      }
+
+      .icons-social {
+        a {
+          text-decoration: none;
+
+          img {
+            width: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .body-side {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 100%;
+      height: calc(100% - 50px);
+      overflow-y: auto;
+
+
+      .header-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .galery-icons {
+          display: flex;
+          align-items: center;
+
+          .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: 0.3s linear;
+
+            img {
+              width: 80%;
+            }
+          }
+
+          .icon-active {
+            border: 1px solid #FF3D00;
+          }
+        }
+
+        .title {
+          margin: 0 auto;
+          width: max-content;
+          height: 35px;
+          text-align: center;
+          color: white;
+          font-weight: bold;
+          font-size: 28px;
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            background: #FF3D00;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            width: 65%;
+          }
+        }
+      }
+
+
+      .active-photo-card {
+        margin: 10px auto 0 auto;
+        width: 70%;
+        height: calc(100% - 230px);
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid white;
+        position: relative;
+
+        .download-photo {
+          position: absolute;
+          right: 6px;
+          top: 6px;
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 2px 5px;
+          border-radius: 10px;
+          cursor: pointer;
+
+          img {
+            width: 26px;
+          }
+        }
+
+        &:hover{
+          img{
+            transform: scale(1.1);
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: 0.3s linear;
+        }
+      }
+
+      .photos {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s linear;
+
+        .photo {
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+          background-color: white;
+          margin-top: 20px;
+          padding: 3px;
+          width: 220px;
+          height: 160px;
+          margin-right: 18px;
+          border-radius: 10px;
+          transition: 0.1s linear;
+          cursor: pointer;
+
+          img {
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &:hover {
+            transform: scale(1.07);
+          }
+        }
+      }
+
+      .active {
+        padding-top: 15px;
+        padding-left: 20px;
+        height: 160px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+
+        &::-webkit-scrollbar {
+          width: 10px;
+          height: 6px;
+          border-radius: 20px;
+        }
+
+        .photo {
+          margin: 0 20px 0 0;
+          width: 200px;
+          height: 125px;
+          padding: 4px;
+        }
+
+        .active-photo {
+          background-color: #FF3D00;
+          transform: scale(1.07);
+        }
+      }
+    }
+  }
+
+  .circle-sloy-one {
+    position: absolute;
+    right: -100px;
+    top: -190px;
+    width: 500px;
+    height: 320px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  .circle-sloy-two {
+    position: absolute;
+    left: -100px;
+    bottom: -160px;
+    width: 600px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 768px){
+  .zones-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    align-items: center;
+
+    .left {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 90px;
+      z-index: 300;
+      background-color: #0e224c;
+    }
+
+    .right {
+      margin-top: 90px;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      .header-side {
+        display: none;
+      }
+
+      .body-side {
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        height: calc(100% - 50px);
+        overflow-y: auto;
+
+        .active-photo-card {
+          margin: 50px auto 0 auto;
+          width: 100%;
+          height: 250px;
+          border-radius: 10px;
+          overflow: hidden;
+          border: 2px solid white;
+          position: relative;
+
+          .download-photo {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2px 5px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            img {
+              width: 26px;
+            }
+          }
+
+          &:hover{
+            img{
+              transform: scale(1.1);
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s linear;
+          }
+        }
+
+        .photos {
+          margin-top: 20px;
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          transition: 0.3s linear;
+
+          .photo {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            background-color: white;
+            margin-top: 20px;
+            padding: 3px;
+            width: 160px;
+            height: 100px;
+            margin-right: 0;
+            border-radius: 10px;
+            transition: 0.1s linear;
+            cursor: pointer;
+
+            img {
+              border-radius: 6px;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            &:hover {
+              transform: scale(1.07);
+            }
+          }
+        }
+
+        .active {
+          padding-top: 15px;
+          padding-left: 20px;
+          height: 160px;
+          overflow-x: auto;
+          flex-wrap: nowrap;
+
+          &::-webkit-scrollbar {
+            width: 10px;
+            height: 6px;
+            border-radius: 20px;
+          }
+
+          .photo {
+            margin: 0 20px 0 0;
+            width: 200px;
+            height: 125px;
+            padding: 4px;
+          }
+
+          .active-photo {
+            background-color: #FF3D00;
+            transform: scale(1.07);
+          }
+        }
+      }
+    }
+
+    .circle-sloy-one {
+      display: none;
+    }
+
+    .circle-sloy-two {
+      position: absolute;
+      left: -100px;
+      bottom: -160px;
+      width: 600px;
+      height: 280px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+  }
+}

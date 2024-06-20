@@ -1,0 +1,418 @@
+.booking-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #0e224c;
+  position: relative;
+  overflow: hidden;
+
+  .left {
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+  }
+
+  .right {
+    width: calc(100% - 300px);
+    height: 100%;
+    z-index: 100;
+
+    .header-side {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      padding-left: 80px;
+      padding-right: 30px;
+
+      .follow-us {
+        color: white;
+        display: flex;
+        align-items: center;
+
+        .line {
+          margin-left: 10px;
+          margin-right: 10px;
+          width: 30px;
+          height: 2px;
+          background-color: white;
+        }
+      }
+
+      .icons-social {
+        a {
+          text-decoration: none;
+
+          img {
+            width: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .body-side {
+      width: 100%;
+      height: calc(100% - 170px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .booking-card {
+        width: 400px;
+
+        .title {
+          text-align: center;
+          font-size: 24px;
+          font-weight: bold;
+          margin-top: 20px;
+          color: white;
+        }
+
+        .des {
+          margin-top: 10px;
+          font-size: 14px;
+          text-align: center;
+          color: #c1c1c1;
+        }
+
+        .form-box {
+          input {
+            margin-top: 20px;
+            width: 100%;
+            height: 40px;
+            padding-left: 10px;
+            border-radius: 6px;
+            border: 1px solid #4c4c4c;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+
+        .send-btn {
+          width: max-content;
+          background-color: #f85508;
+          padding: 10px 30px;
+          margin: 20px auto;
+          cursor: pointer;
+          color: white;
+          border-radius: 100px;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: #9e3c08;
+          }
+        }
+      }
+    }
+
+    .footer-side {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .location {
+        .title {
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: white;
+          letter-spacing: 3px;
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 5px;
+            width: 30px;
+          }
+        }
+
+        .loc {
+          font-size: 16px;
+          margin-top: 10px;
+          color: white;
+
+        }
+      }
+
+      .video-box {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 60px;
+          margin-right: 10px;
+        }
+
+        .left-text {
+          .title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-right: 5px;
+              width: 30px;
+            }
+          }
+
+          .loc {
+            font-size: 16px;
+            margin-top: 10px;
+            color: white;
+
+          }
+        }
+      }
+    }
+  }
+
+  .circle-sloy-one {
+    position: absolute;
+    left: -100px;
+    top: -190px;
+    width: 500px;
+    height: 320px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+
+  .circle-sloy-two {
+    position: absolute;
+    right: -100px;
+    bottom: -160px;
+    width: 600px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    align-items: center;
+    background-color: #0e224c;
+    position: relative;
+    overflow: hidden;
+
+    .left {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 90px;
+      z-index: 300;
+      background-color: #0e224c;
+    }
+
+    .right {
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .header-side {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-left: 80px;
+        padding-right: 30px;
+
+        .follow-us {
+          color: white;
+          display: flex;
+          align-items: center;
+
+          .line {
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 30px;
+            height: 2px;
+            background-color: white;
+          }
+        }
+
+        .icons-social {
+          a {
+            text-decoration: none;
+
+            img {
+              width: 20px;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .body-side {
+        width: 100%;
+        height: calc(100% - 170px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .booking-card {
+          width: 400px;
+
+          .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: white;
+          }
+
+          .des {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            color: #c1c1c1;
+          }
+
+          .form-box {
+            input {
+              margin-top: 20px;
+              width: 100%;
+              height: 40px;
+              padding-left: 10px;
+              border-radius: 6px;
+              border: 1px solid #4c4c4c;
+
+              &:focus {
+                outline: none;
+              }
+
+              &::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+            }
+          }
+
+          .send-btn {
+            width: max-content;
+            background-color: #f85508;
+            padding: 10px 30px;
+            margin: 20px auto;
+            cursor: pointer;
+            color: white;
+            border-radius: 100px;
+            transition: 0.3s;
+
+            &:hover {
+              background-color: #9e3c08;
+            }
+          }
+        }
+      }
+
+      .footer-side {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .location {
+          .title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-right: 5px;
+              width: 30px;
+            }
+          }
+
+          .loc {
+            font-size: 16px;
+            margin-top: 10px;
+            color: white;
+
+          }
+        }
+
+        .video-box {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 60px;
+            margin-right: 10px;
+          }
+
+          .left-text {
+            .title {
+              font-size: 16px;
+              text-transform: uppercase;
+              font-weight: bold;
+              color: white;
+              letter-spacing: 3px;
+              display: flex;
+              align-items: center;
+
+              img {
+                margin-right: 5px;
+                width: 30px;
+              }
+            }
+
+            .loc {
+              font-size: 16px;
+              margin-top: 10px;
+              color: white;
+
+            }
+          }
+        }
+      }
+    }
+
+    .circle-sloy-one {
+      position: absolute;
+      left: -100px;
+      top: -190px;
+      width: 500px;
+      height: 320px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .circle-sloy-two {
+      position: absolute;
+      right: -100px;
+      bottom: -160px;
+      width: 600px;
+      height: 280px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+  }
+}
