@@ -2,14 +2,22 @@ import "./zones-style.scss";
 import Navbar from "../navbar/navbar";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import {useEffect, useState} from "react";
+import axios from "axios";
+import {useContext, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
+import {store} from "../app/App";
 
 const Zones = () => {
+    let value = useContext(store);
     const {t} = useTranslation();
     const [activePhoto, setActivePhoto] = useState("");
+    const [zones, setZones] = useState([]);
 
     useEffect(() => {
+        axios.get(`${value.url}galary/`).then((response) => {
+            setZones(response.data);
+        });
+
         Aos.init({duration: 1000});
     }, []);
 
@@ -37,7 +45,8 @@ const Zones = () => {
                             <img src="./img/galery1.png" alt=""/>
                         </div>
 
-                        <div onClick={() => setActivePhoto("./img/zone1.jpg")} className={`icon ${activePhoto ? "icon-active" : ""}`}>
+                        <div onClick={() => zones.length > 0 && setActivePhoto(zones[0].image)}
+                             className={`icon ${activePhoto ? "icon-active" : ""}`}>
                             <img src="./img/galery2.png" alt=""/>
                         </div>
                     </div>
@@ -54,57 +63,14 @@ const Zones = () => {
                 </div>}
 
                 <div className={`photos ${activePhoto ? "active" : ""}`}>
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone1.jpg")}
-                             className={`photo ${activePhoto === "./img/zone1.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone1.jpg" alt=""/>
+                    {zones.map((item, index) => {
+                        return <div key={index} data-aos="zoom-in">
+                            <div onClick={() => setActivePhoto(item.image)}
+                                 className={`photo ${activePhoto === item.image ? "active-photo" : ""}`}>
+                                <img src={item.image} alt=""/>
+                            </div>
                         </div>
-                    </div>
-
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone2.jpeg")}
-                             className={`photo ${activePhoto === "./img/zone2.jpeg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone2.jpeg" alt=""/>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone3.jpg")}
-                             className={`photo ${activePhoto === "./img/zone3.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone3.jpg" alt=""/>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone4.jpg")}
-                             className={`photo ${activePhoto === "./img/zone4.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone4.jpg" alt=""/>
-                        </div>
-                    </div>
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone5.jpg")}
-                             className={`photo ${activePhoto === "./img/zone5.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone5.jpg" alt=""/>
-                        </div>
-                    </div>
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone6.jpg")}
-                             className={`photo ${activePhoto === "./img/zone6.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone6.jpg" alt=""/>
-                        </div>
-                    </div>
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone7.jpg")}
-                             className={`photo ${activePhoto === "./img/zone7.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone7.jpg" alt=""/>
-                        </div>
-                    </div>
-                    <div data-aos="zoom-in">
-                        <div onClick={() => setActivePhoto("./img/zone8.jpg")}
-                             className={`photo ${activePhoto === "./img/zone8.jpg" ? "active-photo" : ""}`}>
-                            <img src="./img/zone8.jpg" alt=""/>
-                        </div>
-                    </div>
+                    })}
                 </div>
             </div>
         </div>

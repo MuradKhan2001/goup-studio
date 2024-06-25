@@ -6,7 +6,7 @@ import {routes} from "../../routes/Routes";
 export const store = createContext();
 
 const App = () => {
-    const [url, setUrl] = useState('https://api.gtech.uz');
+    const [url, setUrl] = useState('https://api.goup.uz');
 
     return <store.Provider value={{url}}>
         <Routes>

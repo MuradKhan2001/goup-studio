@@ -2,28 +2,22 @@ import "./services-style.scss";
 import Navbar from "../navbar/navbar";
 import Aos from "aos";
 import {useTranslation} from "react-i18next";
-import {useEffect} from "react";
+import {useContext, useEffect, useState} from "react";
+import axios from "axios";
+import {store} from "../app/App";
+import i18next from "i18next";
 
 const Services = () => {
+    let value = useContext(store);
     const {t} = useTranslation();
+    const [services, setServices] = useState([]);
+
     useEffect(() => {
+        axios.get(`${value.url}service/`).then((response) => {
+            setServices(response.data);
+        });
         Aos.init({duration: 1000});
     }, []);
-
-    const service = [
-        {
-            name: "Studio arenda", des: "Studio arenda barcha jixozlar bilan. 1 soatlik narx",
-            price: "250 000"
-        },
-        {
-            name: "Mobilogrof", des: "Mobilogrof xizmati. 1 dona video uchun narx",
-            price: "250 000"
-        },
-        {
-            name: "Video montaj", des: "Video montaj xizmati. 1 dona video uchun narx",
-            price: "250 000"
-        },
-    ];
 
     return <div className="services-wrapper">
         <div className="left">
@@ -48,14 +42,14 @@ const Services = () => {
                 </div>
 
                 <div className="services-box">
-                    {service.map((item, index) => {
+                    {services.map((item, index) => {
                         return <div data-aos="flip-left" key={index} className="service">
                             <div className="num-service">0{index + 1}</div>
-                            <div className="name">{item.name}</div>
+                            <div className="name">{item.translations[i18next.language].name}</div>
                             <div className="description">
-                                {item.des}
+                                {item.translations[i18next.language].description}
                             </div>
-                            <div className="price">{item.price}</div>
+                            <div className="price">{item.cost}</div>
                         </div>
                     })}
                 </div>
