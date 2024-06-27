@@ -66,7 +66,7 @@ const Home = () => {
                             <img onClick={() => setShowModalVideo(false)} src="./img/cross.png" alt=""/>
                         </div>
                         <div className="video-main">
-                            <video controls autoPlay loop muted src="./img/main-video.mp4"></video>
+                            {/*<video controls autoPlay loop muted src="./img/main-video.mp4"></video>*/}
                         </div>
                     </div>
                 </div>

@@ -3,12 +3,15 @@ import Navbar from "../navbar/navbar";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {store} from "../app/App";
+import {CSSTransition} from "react-transition-group";
 
 const Zones = () => {
     let value = useContext(store);
+    const nodeRef = useRef(null);
+    const [showModal, setShowModal] = useState(false);
     const {t} = useTranslation();
     const [activePhoto, setActivePhoto] = useState("");
     const [zones, setZones] = useState([]);
@@ -22,6 +25,27 @@ const Zones = () => {
     }, []);
 
     return <div className="zones-wrapper">
+        <CSSTransition
+            in={showModal}
+            nodeRef={nodeRef}
+            timeout={300}
+            classNames="alert"
+            unmountOnExit
+        >
+            <div className="modal-sloy">
+                <div ref={nodeRef} className="modal-card">
+                    <div className="main-video">
+                        <div className="xbtn">
+                            <img onClick={() => setShowModal(false)} src="./img/cross.png" alt=""/>
+                        </div>
+                        <div className="photo-main">
+                            <img src={activePhoto} alt={activePhoto}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </CSSTransition>
+
         <div className="left">
             <Navbar/>
         </div>
@@ -40,34 +64,21 @@ const Zones = () => {
             </div>
             <div className="body-side">
                 <div className="header-body">
-                    <div className="galery-icons">
-                        <div onClick={() => setActivePhoto("")} className={`icon ${!activePhoto ? "icon-active" : ""}`}>
-                            <img src="./img/galery1.png" alt=""/>
-                        </div>
-
-                        <div onClick={() => zones.length > 0 && setActivePhoto(zones[0].image)}
-                             className={`icon ${activePhoto ? "icon-active" : ""}`}>
-                            <img src="./img/galery2.png" alt=""/>
-                        </div>
-                    </div>
                     <div className="title">
                         {t("nav2")}
                     </div>
-                    <div></div>
                 </div>
-                {activePhoto && <div className="active-photo-card">
-                    <img src={activePhoto} alt=""/>
-                    <div className="download-photo">
-                        <img src="./img/download.png" alt=""/>
-                    </div>
-                </div>}
 
-                <div className={`photos ${activePhoto ? "active" : ""}`}>
+                <div className="photos">
                     {zones.map((item, index) => {
                         return <div key={index} data-aos="zoom-in">
-                            <div onClick={() => setActivePhoto(item.image)}
+                            <div onClick={() => {
+                                setActivePhoto(item.image)
+                                setShowModal(true)
+                            }}
                                  className={`photo ${activePhoto === item.image ? "active-photo" : ""}`}>
                                 <img src={item.image} alt=""/>
+                                {console.log(item.image)}
                             </div>
                         </div>
                     })}
