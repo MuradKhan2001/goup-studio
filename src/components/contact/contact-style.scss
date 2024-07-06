@@ -119,6 +119,11 @@
           img {
             width: 25px;
             margin-right: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+              transform: scale(1.15);
+            }
           }
         }
 
@@ -126,6 +131,7 @@
           margin-top: 40px;
           display: flex;
           align-items: center;
+          cursor: pointer;
 
           img {
             width: 30px;

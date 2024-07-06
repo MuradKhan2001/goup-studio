@@ -7,7 +7,7 @@
   "home_text2": "Biz bilan birga rivojlaning!",
   "booking": "Joy band qilish",
   "location": "Manzilimiz",
-  "location_name": "Toshkent shahri, Chilonzor tumani",
+  "location_name": "Toshkent shahar, Bunyodkor, 29A.",
   "phone": "Telefon raqam",
   "about_us": "Biz haqimizda",
   "des_about": "Video ustiga bosing",
@@ -15,5 +15,6 @@
   "name": "Ism",
   "send": "Yuborish",
   "des": "Ismingiz va raqamingizni yuboring va tez orada adminimiz siz bilan bo'glanadi!",
-  "sent-text": "Xabar yuborildi!"
+  "sent-text": "Xabar yuborildi!",
+  "price": "so'm"
 }

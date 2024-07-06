@@ -30,9 +30,10 @@ const Services = () => {
                     <div className="line"></div>
                 </div>
                 <div className="icons-social">
-                    <a href=""><img src="./img/instagram.png" alt=""/></a>
-                    <a href=""><img src="./img/facebook.png" alt=""/></a>
-                    <a href=""><img src="./img/tik-tok.png" alt=""/></a>
+                    <a href="https://www.instagram.com/goup_uz/" target="_blank"><img src="./img/instagram.png" alt=""/></a>
+                    <a href="https://www.facebook.com/profile.php?id=61562086226102" target="_blank"><img src="./img/facebook.png" alt=""/></a>
+                    <a href="https://t.me/+r6T9RsMRhcs4ZTYy" target="_blank"><img src="./img/telegram.png" alt=""/></a>
+                    <a href="https://www.tiktok.com/@goup_uz?_t=8nnh70jdfyE&_r=1" target="_blank"><img src="./img/tik-tok.png" alt=""/></a>
                     <a href=""><img src="./img/youtube.png" alt=""/></a>
                 </div>
             </div>
@@ -49,7 +50,7 @@ const Services = () => {
                             <div className="description">
                                 {item.translations[i18next.language].description}
                             </div>
-                            <div className="price">{item.cost}</div>
+                            <div className="price">{item.cost} {t("price")}</div>
                         </div>
                     })}
                 </div>

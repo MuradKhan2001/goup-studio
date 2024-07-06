@@ -76,6 +76,7 @@ const Home = () => {
         <div className="left">
             <Navbar/>
         </div>
+
         <div className="right">
             <div className="header-side">
                 <div className="follow-us">
@@ -83,10 +84,10 @@ const Home = () => {
                     <div className="line"></div>
                 </div>
                 <div className="icons-social">
-                    <a href=""><img src="./img/instagram.png" alt=""/></a>
-                    <a href=""><img src="./img/facebook.png" alt=""/></a>
-                    <a href=""><img src="./img/telegram.png" alt=""/></a>
-                    <a href=""><img src="./img/tik-tok.png" alt=""/></a>
+                    <a href="https://www.instagram.com/goup_uz/" target="_blank"><img src="./img/instagram.png" alt=""/></a>
+                    <a href="https://www.facebook.com/profile.php?id=61562086226102" target="_blank"><img src="./img/facebook.png" alt=""/></a>
+                    <a href="https://t.me/+r6T9RsMRhcs4ZTYy" target="_blank"><img src="./img/telegram.png" alt=""/></a>
+                    <a href="https://www.tiktok.com/@goup_uz?_t=8nnh70jdfyE&_r=1" target="_blank"><img src="./img/tik-tok.png" alt=""/></a>
                     <a href=""><img src="./img/youtube.png" alt=""/></a>
                 </div>
             </div>
@@ -123,20 +124,21 @@ const Home = () => {
                         {t("phone")}
                     </div>
                     <div className="loc">
-                        +998 99 999 99 99
+                        +998 95 111-90-20
                     </div>
                 </div>
-                <div className="video-box">
-                    <img onClick={() => setShowModalVideo(true)} src="./img/play-button.png" alt=""/>
-                    <div className="left-text">
-                        <div className="title">
-                            {t("about_us")}
-                        </div>
-                        <div className="loc">
-                            {t("des_about")}
-                        </div>
-                    </div>
-                </div>
+
+                {/*<div className="video-box">*/}
+                {/*    <img onClick={() => setShowModalVideo(true)} src="./img/play-button.png" alt=""/>*/}
+                {/*    <div className="left-text">*/}
+                {/*        <div className="title">*/}
+                {/*            {t("about_us")}*/}
+                {/*        </div>*/}
+                {/*        <div className="loc">*/}
+                {/*            {t("des_about")}*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
 
             <div className="video-box">
