@@ -81,7 +81,7 @@ const Contact = () => {
                         <img src="./img/youtube.png" alt=""/>
                         <img src="./img/telegram.png" alt=""/>
                         <img src="./img/tik-tok.png" alt=""/>
-                        <div className="name">goup_media</div>
+                        <div className="name">goup_uz</div>
                     </div>
                     <div className="phone">
                         <img src="./img/phone.png" alt=""/>

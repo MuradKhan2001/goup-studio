@@ -66,7 +66,7 @@ const Home = () => {
                             <img onClick={() => setShowModalVideo(false)} src="./img/cross.png" alt=""/>
                         </div>
                         <div className="video-main">
-                            {/*<video controls autoPlay loop muted src="./img/main-video.mp4"></video>*/}
+                            <video controls autoPlay loop muted src="./img/about-us.mp4"></video>
                         </div>
                     </div>
                 </div>
@@ -85,10 +85,12 @@ const Home = () => {
                 </div>
                 <div className="icons-social">
                     <a href="https://www.instagram.com/goup_uz/" target="_blank"><img src="./img/instagram.png" alt=""/></a>
-                    <a href="https://www.facebook.com/profile.php?id=61562086226102" target="_blank"><img src="./img/facebook.png" alt=""/></a>
+                    <a href="https://www.facebook.com/profile.php?id=61562086226102" target="_blank"><img
+                        src="./img/facebook.png" alt=""/></a>
                     <a href="https://t.me/+r6T9RsMRhcs4ZTYy" target="_blank"><img src="./img/telegram.png" alt=""/></a>
-                    <a href="https://www.tiktok.com/@goup_uz?_t=8nnh70jdfyE&_r=1" target="_blank"><img src="./img/tik-tok.png" alt=""/></a>
-                    <a href=""><img src="./img/youtube.png" alt=""/></a>
+                    <a href="https://www.tiktok.com/@goup_uz?_t=8nnh70jdfyE&_r=1" target="_blank"><img
+                        src="./img/tik-tok.png" alt=""/></a>
+                    <a href="https://www.youtube.com/@GoUp_uz" target="_blank"><img src="./img/youtube.png" alt=""/></a>
                 </div>
             </div>
             <div className="body-side">
@@ -128,23 +130,23 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/*<div className="video-box">*/}
-                {/*    <img onClick={() => setShowModalVideo(true)} src="./img/play-button.png" alt=""/>*/}
-                {/*    <div className="left-text">*/}
-                {/*        <div className="title">*/}
-                {/*            {t("about_us")}*/}
-                {/*        </div>*/}
-                {/*        <div className="loc">*/}
-                {/*            {t("des_about")}*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
+                <div className="video-box">
+                    <img onClick={() => setShowModalVideo(true)} src="./img/play-button.png" alt=""/>
+                    <div className="left-text">
+                        <div className="title">
+                            {t("about_us")}
+                        </div>
+                        <div className="loc">
+                            {t("des_about")}
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <div className="video-box">
 
             </div>
         </div>
+
         <div className="circle-sloy-one"></div>
         <div className="circle-sloy-two"></div>
     </div>
