@@ -13,7 +13,8 @@ const Home = () => {
     const [showModal, setShowModal] = useState(false);
     const [showModalVideo, setShowModalVideo] = useState(false);
     const [name, setName] = useState("");
-    const [number, setNumber] = useState("+998");
+    const [number, setNumber] = useState("");
+
     useEffect(() => {
         Aos.init({duration: 1000});
     }, []);
